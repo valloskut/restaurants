@@ -10,6 +10,18 @@ class OrdersController < ApplicationController
     end
   end
 
+  def accept
+    @order = Order.find(params[:id])
+    @order.update_attribute(:confirmed, true)
+    respond_with :js
+  end
+
+  def decline
+    @order = Order.find(params[:id])
+    @order.delete
+    respond_with :js
+  end
+
   # GET /orders/1
   # GET /orders/1.json
   def show

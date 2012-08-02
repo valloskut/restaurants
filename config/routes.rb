@@ -1,7 +1,12 @@
 Restaurants::Application.routes.draw do
-  resources :orders
-
   root to: "home#index"
+
+  resources :orders do
+    member do
+      post :accept
+      delete :decline
+    end
+  end
 
   resources :employees
 
