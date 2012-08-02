@@ -1,6 +1,6 @@
 %h1 Listing orders
 
-%table
+%table#orders
   %tr
     %th Number
     %th Description
@@ -10,10 +10,10 @@
     %th
 
   - @orders.each do |order|
-    %tr
+    %tr{id: order.id}
       %td= order.number
       %td= order.description
-      %td= order.confirmed
+      %td.confirmation= order.confirmed
       %td= link_to 'Accept', accept_order_path(order), remote: true, method: :post
       %td= link_to 'Decline', decline_order_path(order), :confirm => "Declined order will be deleted. Continue?", remote: true, method: :delete
       %td= link_to 'Show', order
