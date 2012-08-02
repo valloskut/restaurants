@@ -1,4 +1,6 @@
 Restaurants::Application.routes.draw do
+  resources :orders
+
   root to: "home#index"
 
   resources :employees

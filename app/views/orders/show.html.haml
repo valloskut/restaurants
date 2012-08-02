@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Number:
+  = @order.number
+%p
+  %b Description:
+  = @order.description
+%p
+  %b Confirmed:
+  = @order.confirmed
+
+= link_to 'Edit', edit_order_path(@order)
+\|
+= link_to 'Back', orders_path
