@@ -5,6 +5,7 @@
     %th Name
     %th Marital Status
     %th Habits
+    %th Restaurant
     %th
     %th
     %th
@@ -14,6 +15,7 @@
       %td= employee.name
       %td= employee.marital_status
       %td= employee.habits
+      %td= employee.restaurant.name
       %td= link_to 'Show', employee
       %td= link_to 'Edit', edit_employee_path(employee)
       %td= link_to 'Destroy', employee, :confirm => 'Are you sure?', :method => :delete
